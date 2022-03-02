@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package api;
+
+import "google/protobuf/empty.proto";
+
+option go_package = "./grpc/proto;pb";
+
+message FooRes {
+  string foo = 1;
+}
+
+service ApiService {
+  rpc GetFoo(google.protobuf.Empty) returns (FooRes);
+}
